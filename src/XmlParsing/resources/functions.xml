@@ -1,0 +1,12 @@
+<functions>
+    <function_Add>
+        <input>X</input>
+        <input>Y</input>
+        <output>Z</output>
+    </function_Add>
+    <function_Subtract>
+        <input>X</input>
+        <input>Y</input>
+        <output>ZZ</output>
+    </function_Subtract>
+</functions>
