@@ -1,5 +1,6 @@
 package FileInfo.Backstore
 
+import Core.DbQuery
 import FileInfo.Models.{FileInfoItem, HashListItem}
 
 class DbFetchAllHashList(val database:String, val user:String, val pass:String)

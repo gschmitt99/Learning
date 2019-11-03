@@ -1,0 +1,15 @@
+
+example of bulk insert from a file.
+private void Initialize()
+		{
+			command.CommandType = CommandType.Text;
+			command.CommandText = String.Format("load data infile " +
+				"'{0}' " +
+				"into table {1} " +
+				"fields terminated by ',' " +
+				"optionally enclosed by '\"' " +
+				"lines terminated by '\\r\\n' " +
+				"(MD5Hash, FileName, FileSize)"
+			, _bulkFileName.Replace( '\\', '/')
+			, _tableName );
+		}

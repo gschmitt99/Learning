@@ -1,5 +1,6 @@
 package FileInfo.Backstore
 
+import Core.DbQuery
 import FileInfo.Models.FileInfoItem
 
 class DbFetchAllFileInfo(val database:String, val user:String, val pass:String)

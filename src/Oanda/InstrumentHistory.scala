@@ -2,6 +2,8 @@ package Oanda
 
 import java.util.Date
 
+import Oanda.Models.{DailyTicketFinancing, OrderFill}
+
 import scala.collection.mutable
 
 object PipCalculator {
@@ -76,9 +78,9 @@ class InstrumentHistory(val instrument:String) {
       var weights = 0.0
       fills.foreach( f => {
          if( vol > 0 ) {
-            val fw = f.matchFill(vol)
-            weights += fw.weight
-            vol = vol - fw.volume
+            //val fw = f.matchFill(vol)
+            //weights += fw.weight
+            //vol = vol - fw.volume
          }
       })
 
@@ -133,6 +135,7 @@ class InstrumentHistory(val instrument:String) {
          weights += (f.price * f.volume)
          totalVolume += f.volume
       })
+      println(s"${instrument} weights=${weights} totalVolume=${totalVolume}")
       averagePrice = math.rint(weights/totalVolume*1000000)/1000000
       balanceDelta
    }
