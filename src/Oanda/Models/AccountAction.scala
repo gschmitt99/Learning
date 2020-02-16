@@ -2,84 +2,74 @@ package Oanda.Models
 
 import java.util.Date
 
-abstract class AccountAction(val ticket:Long, val date:Date) {
+abstract class AccountAction(val transactionId:Long, val accountId:Long, val ticket:Long, val date:Date) {
    //def process(l:Ledger) : Unit = {
    //}
 }
 
 // can probably eliminate this because it came from the 'old' format.
 class CloseTrade(
-                   override val ticket:Long,
-                   override val date:Date,
-                   val instrument: String,
-                   val volume:Int,
-                   val price:Double,
-                   val amount:Double,
-                   val interest:Double
-                )
-   extends AccountAction(ticket,date) {
+    override val transactionId:Long,
+    override val accountId:Long,
+    override val ticket:Long,
+    override val date:Date,
+    val instrument: String,
+    val volume:Int,
+    val price:Double,
+    val amount:Double,
+    val interest:Double
+)
+extends AccountAction(transactionId,accountId,ticket,date)
 
-   //override def process(l:Ledger) : Unit = {
-   //}
-}
-class Create(override val ticket:Long, override val date:Date) extends AccountAction(ticket,date) {
+class Create(
+   override val transactionId:Long,
+   override val accountId:Long,
+   override val ticket:Long,
+   override val date:Date
+)
+extends AccountAction(transactionId,accountId,ticket,date)
 
-}
+class ClientConfigure(
+   override val transactionId:Long,
+   override val accountId:Long,
+   override val ticket:Long,
+   override val date:Date
+)
+extends AccountAction(transactionId,accountId,ticket,date)
 
-class ClientConfigure(override val ticket:Long,override val date:Date) extends AccountAction(ticket,date) {
-   //override def process(l:Ledger) : Unit = {
-   //}
-}
+class TransferFunds(
+    override val transactionId:Long,
+    override val accountId:Long,
+    override val ticket:Long,
+    override val date:Date,
+    val amount:Double
+)
+extends AccountAction(transactionId,accountId,ticket,date)
 
-class TransferFunds(override val ticket:Long,override val date:Date, val amount:Double) extends AccountAction(ticket,date) {
-   //override def process(l:Ledger) : Unit = {
-   //   l.addFunds(this)
-   //}
-}
-
-class FixedPriceOrder(override val ticket:Long,override val date:Date) extends AccountAction(ticket,date){
-   //override def process(l:Ledger) : Unit = {
-   //   println( s"FixedPriceOrder: ticket=$ticket ")
-   //}
-}
+class FixedPriceOrder(
+   override val transactionId:Long,
+   override val accountId:Long,
+   override val ticket:Long,
+   override val date:Date
+)
+extends AccountAction(transactionId,accountId,ticket,date)
 
 case class FillWeight( volume:Int, weight:Double )
 
 class OrderFill(
-    override val ticket:Long
+    override val transactionId:Long
+    ,override val accountId:Long
+    ,override val ticket:Long
     ,override val date:Date
-    ,val accountId:Long
     ,val instrument:String
     ,val price:Double
     ,val _volume:Int
     ,val Direction:String
     ,val spreadCost:Double = 0.0
     ,val financing:Double = 0.0
-) extends AccountAction(ticket,date){
+) extends AccountAction(transactionId,accountId,ticket,date){
    var _matchedVolume = 0
    val volume = if( Direction.equals("Sell")) -_volume else _volume
-   //override def process(l:Ledger) : Unit = {
-   //   println( s"OrderFill $instrument $price $volume $Direction" )
-   //   //l.addFill(this)
-   //}
-   //def matchFill(matchVol:Int) : FillWeight = {
-   //   val absVol = Math.abs(volume)
-   //   val absMatchVol = Math.abs(matchVol)
-   //   val d = absMatchVol - absVol
-   //   if( d > 0 ) {
-   //      _matchedVolume = absVol
-   //      val w = price * _matchedVolume
-   //      FillWeight(_matchedVolume, w)
-   //   } else if( d == 0 ) {
-   //      _matchedVolume = absVol
-   //      val w = price * absVol
-   //      FillWeight(absVol,w)
-   //   } else {
-   //      _matchedVolume = 3
-   //      val w = price * absVol
-   //      FillWeight(d,w)
-   //   }
-   //}
 }
 
 case class Fill(
@@ -89,11 +79,79 @@ case class Fill(
    ,val FillDate:Date
    ,val Instrument:String
    ,val Price:Double
-   ,val Volume:Int
+   ,val Volume:Long
    ,val Direction:String
-   ,val SpreadCost:Double = 0.0
-   ,val Financing:Double = 0.0
+   ,val PerUnitFees:Double
+   ,val SpreadCost:Double
+   ,val Financing:Double
+   ,val Fx: Double
 )
+
+object Fill {
+
+   def determineFx(instrument: String, price:Double):Double = {
+      val parts = instrument.split("/")
+      val fx = if( parts.length == 2 ) {
+         if( parts(0).equals("USD")) {
+            1/price
+         } else {
+            1
+         }
+      } else {
+         1
+      }
+      fx
+   }
+
+   /* I don't fully understand this, but it appears the financing
+   is based on the opposite of the base currency.  In the case of EUR/USD
+   it is in EUR where the PnL for the same trade would be in USD.
+    */
+   def determineInverseFx(instrument: String, price:Double):Double = {
+      val parts = instrument.split("/")
+      val fx = if( parts.length == 2 ) {
+         if( parts(1).equals("USD")) {
+            1/price
+         } else {
+            1
+         }
+      } else {
+         1
+      }
+      fx
+   }
+
+   def apply(
+   FillId: Long
+   ,Ticket: Long
+   ,AccountId: Long
+   ,FillDate: Date
+   ,Instrument: String
+   ,Price: Double
+   ,Volume: Long
+   ,Direction: String
+   ,SpreadCost: Double = 0.0
+   ,Financing: Double = 0.0
+   ): Fill = {
+      val fx = determineFx(Instrument, Price)
+      val inverseFx = determineInverseFx(Instrument, Price)
+      val perUnitFee = (Financing * inverseFx) / Volume
+      new Fill(
+         FillId,
+         Ticket,
+         AccountId,
+         FillDate,
+         Instrument,
+         Price,
+         Volume,
+         Direction,
+         perUnitFee,
+         SpreadCost,
+         Financing,
+         fx
+      )
+   }
+}
 
 case class Trade(
     var TradeId:Long=0,
@@ -110,25 +168,48 @@ case class Trade(
     var ExitFillTime:Date=new Date(),
     var ExitFillPrice:Double=0.0)
 
-class MarketOrder(override val ticket:Long,override val date:Date) extends AccountAction(ticket,date){
-   //override def process(l:Ledger) : Unit = {
-   //}
-}
-class OrderCancel(override val ticket:Long,override val date:Date) extends AccountAction(ticket,date){
-   //override def process(l:Ledger) : Unit = {
-   //}
-}
+case class Position(
+    var PositionId:Long,
+    var AccountId:Long,
+    var Instrument:String,
+    var Position:Long
+    )
 
-class DailyTicketFinancing(override val ticket:Long,override val date:Date, val instrument:String, val financing:Double) extends AccountAction(ticket,date){
-   //override def process(l:Ledger) : Unit = {
-   //   //l.addDailyTicketFinancing(this)
-   //}
-}
+class MarketOrder(
+  override val transactionId:Long,
+  override val accountId:Long,
+  override val ticket:Long,
+  override val date:Date
+)
+extends AccountAction(transactionId,accountId,ticket,date)
 
-class DailyFinancingSummary(override val ticket:Long,override val date:Date, val financing:Double) extends AccountAction(ticket,date){
-   //override def process(l:Ledger) : Unit = {
-   //   //l.addDailyFinancingSummary(this)
-   //}
-}
+class OrderCancel(
+  override val transactionId:Long,
+  override val accountId:Long,
+  override val ticket:Long,
+  override val date:Date
+)
+extends AccountAction(transactionId,accountId,ticket,date)
+
+class DailyTicketFinancing(
+  override val transactionId:Long,
+  override val accountId:Long,
+  override val ticket:Long,
+  override val date:Date,
+  val instrument:String, val financing:Double
+)
+extends AccountAction(transactionId,accountId,ticket,date)
+
+class DailyFinancingSummary(
+   override val transactionId:Long,
+   override val accountId:Long,
+   override val ticket:Long,
+   override val date:Date,
+   val financing:Double
+)
+extends AccountAction(transactionId,accountId,ticket,date)
 
 case class Account(var AccountId:Long, var AccountName:String)
+
+// represents the last transaction that has been processed by the system.
+case class LastTransaction(val LastTransactionId:Long, val AccountId:Long, val TransactionId:Long)

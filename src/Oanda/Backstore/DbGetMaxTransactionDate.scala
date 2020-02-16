@@ -9,6 +9,9 @@ extends DbQuery(database,user,pass) {
 
    _query = "select max(Date) as MaxDate from transactions"
    def getMaxDate() : Timestamp = {
-      _reader.getTimestamp("MaxDate")
+      var r = _reader.getTimestamp("MaxDate")
+      if( r == null )
+         new Timestamp(0)
+      else r
    }
 }

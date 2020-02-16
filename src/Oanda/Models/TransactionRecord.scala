@@ -4,6 +4,8 @@ import java.util.Date
 import java.text.SimpleDateFormat
 
 case class TransactionRecord(
+    TransactionId:Long,
+    AccountId:Long,
     Ticket:String,
     Date:String,
     Timezone:String,
@@ -28,37 +30,39 @@ case class TransactionRecord(
 
    }
 
-   def transform(account: Account, dateFormat: String): Option[AccountAction] = {
+   val format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss")
+
+   def transform(account: Account): Option[AccountAction] = {
       //val format = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss")
-      val format = new SimpleDateFormat(dateFormat)
+      //val format = new SimpleDateFormat(dateFormat)
       val convertedDate = format.parse(Date)
       Transaction match {
          //case "CREATE" => None:Option[AccountAction]
          //case "CLIENT_CONFIGURE" => None:Option[AccountAction]
-         case "CREATE" => Option(new Create(Ticket.toInt, convertedDate))
-         case "CLIENT_CONFIGURE" => Option(new ClientConfigure(Ticket.toInt, convertedDate))
-         case "TRANSFER_FUNDS" => Option(new TransferFunds(Ticket.toInt, convertedDate, Amount.toDouble))
+         case "CREATE" => Option(new Create(TransactionId,AccountId,Ticket.toInt, convertedDate))
+         case "CLIENT_CONFIGURE" => Option(new ClientConfigure(TransactionId,AccountId,Ticket.toInt, convertedDate))
+         case "TRANSFER_FUNDS" => Option(new TransferFunds(TransactionId,AccountId,Ticket.toInt, convertedDate, Amount.toDouble))
          case "FIXED_PRICE_ORDER" =>
-            Option(new FixedPriceOrder(Ticket.toInt, convertedDate))
+            Option(new FixedPriceOrder(TransactionId,AccountId,Ticket.toInt, convertedDate))
          case "ORDER_FILL" => {
             if( SpreadCost.isEmpty() ) {
-               Option(new OrderFill(Ticket.toInt, convertedDate, account.AccountId, Instrument, Price.toDouble, Units.toInt, Direction))
+               Option(new OrderFill(TransactionId,AccountId,Ticket.toInt, convertedDate,Instrument, Price.toDouble, Units.toInt, Direction))
             } else {
-               Option(new OrderFill(Ticket.toInt, convertedDate, account.AccountId, Instrument, Price.toDouble, Units.toInt, Direction,SpreadCost.toDouble,Financing.toDouble))
+               Option(new OrderFill(TransactionId,AccountId,Ticket.toInt, convertedDate,Instrument, Price.toDouble, Units.toInt, Direction,SpreadCost.toDouble,Financing.toDouble))
             }
          }
          case "DAILY_FINANCING" => {
             if( Ticket.isEmpty()) {
                val tradeId = Details.split(":")(1).trim().toInt
-               Option(new DailyTicketFinancing(tradeId, convertedDate, Instrument, Financing.toDouble))
+               Option(new DailyTicketFinancing(TransactionId,AccountId,tradeId, convertedDate, Instrument, Financing.toDouble))
             }
             else {
-               Option(new DailyFinancingSummary(Ticket.toInt, convertedDate, Financing.toDouble))
+               Option(new DailyFinancingSummary(TransactionId,AccountId,Ticket.toInt, convertedDate, Financing.toDouble))
             }
          }
-         case "MARKET_ORDER" => Option(new MarketOrder(Ticket.toInt, convertedDate))
-         case "MARKET_IF_TOUCHED_ORDER" => Option(new MarketOrder(Ticket.toInt,convertedDate))
-         case "ORDER_CANCEL" => Option(new OrderCancel(Ticket.toInt,convertedDate))
+         case "MARKET_ORDER" => Option(new MarketOrder(TransactionId,AccountId,Ticket.toInt, convertedDate))
+         case "MARKET_IF_TOUCHED_ORDER" => Option(new MarketOrder(TransactionId,AccountId,Ticket.toInt,convertedDate))
+         case "ORDER_CANCEL" => Option(new OrderCancel(TransactionId,AccountId,Ticket.toInt,convertedDate))
          case _ => None:Option[AccountAction]
       }
    }
@@ -83,11 +87,11 @@ case class DatabaseTransactionRecord(
    Amount:Option[Double],
    Balance:Option[Double]
 )
-   object DatabaseTransactionRecord
+object DatabaseTransactionRecord
 {
+   private val dateFormat = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss a")
    def get(tr:TransactionRecord):DatabaseTransactionRecord = {
-      val format = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss a")
-      val convertedDate = format.parse(tr.Date)
+      val convertedDate = dateFormat.parse(tr.Date)
       new DatabaseTransactionRecord(
          if (tr.Ticket.length() > 0) Some(tr.Ticket.toInt) else None
          ,convertedDate

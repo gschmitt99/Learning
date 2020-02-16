@@ -1,19 +1,32 @@
 package Oanda.Backstore
 
+import java.sql.Timestamp
 import java.util.Date
 
 import Core.DbQuery
-import Oanda.Models.Account
+import Oanda.Models.{Account, LastTransaction}
 
 class DbGetTransactionsString(
                                 val database:String,
                                 val user:String,
                                 val pass:String,
-                                val account:Account )
+                                val account:Account,
+                                val lastTransaction:Option[LastTransaction]
+                             )
 extends DbQuery(database,user,pass) {
 
-   _query = s"select * from transactions where AccountId=${account.AccountId}"
+   if( lastTransaction.isDefined ) {
+      _query = s"select * from transactions where AccountId=${account.AccountId} and TransactionId>'${lastTransaction.get.TransactionId}'"
+   } else {
+      _query = s"select * from transactions where AccountId=${account.AccountId}"
 
+   }
+   def getTransactionId():Long = {
+      _reader.getLong("TransactionId")
+   }
+   def getAccountId():Long = {
+      _reader.getLong("AccountId")
+   }
    def getTicket() : String = {
       val v = _reader.getString("Ticket")
       return if( v != null) v else ""

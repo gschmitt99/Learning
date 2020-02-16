@@ -17,7 +17,7 @@ object Ledger {
       balance += funds.amount
    }
 
-   def addFill(orderFill:OrderFill): Unit = {
+   def addFill(orderFill:OrderFill, position: Long, tradeList: mutable.MutableList[Trade]): Long = {
       if( !instruments.contains(orderFill.instrument)) {
          instruments += (orderFill.instrument -> new InstrumentHistory(orderFill.instrument))
       }
@@ -36,103 +36,215 @@ object Ledger {
          )
          PersistenceManager.insertFill(fill)
       })
-      calculatePosition(fill)
-      //instruments(fill.instrument).addFill(fill)
+      calculatePosition(fill, position, tradeList)
    }
 
-   def calculatePosition(fill:Fill): Unit = {
-      var position:Long = 0
-      if( fill.Direction.equals("Buy")) {
-         processLongFill( fill, position )
-      }else {
-         processShortFill( fill, position )
-      }
+   def calculatePosition(fill:Fill, position: Long, tradeList: mutable.MutableList[Trade]): Long = {
+     if (fill.Direction.equals("Buy")) {
+        processLongFill(fill, position, tradeList)
+     } else {
+        processShortFill(fill, position, tradeList)
+     }
    }
 
    def createTrade(fill:Fill, isBuy:Boolean, sequence:Long): Trade = {
       new Trade(-1,fill.AccountId, fill.Instrument, sequence, isBuy,
-         fill.Volume,0.0,fill.FillId,fill.FillDate,fill.Price,0, null,0.0)
+         Math.abs(fill.Volume),0.0,fill.FillId,fill.FillDate,fill.Price,0, null,0.0)
    }
 
-   def processLongFill( fill:Fill, position:Long ): Long = {
-      var newPosition = position
-      var fillQuantity = fill.Volume
-      var sequence:Long = 0
-      val trades = PersistenceManager.getTrades(1, fill.Instrument)
-      while( fillQuantity > 0 ) {
-         trades.foreach( t => {
-            if( t.IsBuy && t.ExitFillId == 0) {
-               if( fill.Volume < t.Quantity) {
-                  val trade = createTrade(fill,false,sequence)
-                  trade.EntryFillId = fill.FillId
-                  trade.Quantity = t.Quantity - fill.Volume
-                  trade.EntryFillPrice = fill.Price
-                  trade.IsBuy = false
-               }
-            }
-            newPosition += fill.Volume
-         })
-      }
-      newPosition
-   }
+   /* to analyze how this is coming out, simply need to:
+SELECT Quantity,EntryFillPrice,ExitFillPrice,ClosedProfit,
+EntryFillTime,ExitFillTime FROM trades t WHERE instrument='EUR/USD'
+INTO OUTFILE 'c:\\log\\query1235.csv'
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n';
 
-   def processShortFill( fill:Fill, position:Long ): Long = {
+Then sum the appropriate closed profit records.  That number should be the difference
+in the account balance after the fill has been added.
+
+Note, per unit cost here is (1/price * commission) / close fill quantity
+in the case of EUR/USD.  I do not know why commission is positive here, and I do not
+know why the financing cost does not seem to be used in the calcs.
+    */
+   def processLongFill( fill:Fill, position:Long, trades: mutable.MutableList[Trade] ): Long = {
       var newPosition = position
       var fillQuantity = fill.Volume
       var sequence:Long = 0
       var pnl:Double = 0.0
       var aMatch:Boolean = false
-      var leftOff:Long = 0
       var newTrade: Trade = null
       val newTrades:mutable.MutableList[Trade] = new mutable.MutableList[Trade]()
-      val trades = PersistenceManager.getTrades(fill.AccountId,fill.Instrument)
-      if( trades.length > 0 ) {
-         PersistenceManager.deleteTradesByAccountIdAndInstrument(trades.head)
-      }
-      while( fillQuantity < 0 ) {
+      while( fillQuantity > 0 ) {
+         newTrade = null
          aMatch = false
          trades.foreach( t => {
-            // found an exit trade ?
-            if(t.IsBuy && t.ExitFillId == 0) {
-               // the open trade fully takes the fill
-               if(fill.Volume < t.Quantity) {
-                  newTrade = createTrade(fill,false,sequence)
-                  newTrade.EntryFillId = fill.FillId
-                  newTrade.Quantity = t.Quantity - fill.Volume
-                  newTrade.EntryFillPrice = fill.Price
-                  newTrade.IsBuy = false
+            if( fillQuantity > 0 ) {
+               // found an exit trade ?
+               if (!t.IsBuy && t.ExitFillId == 0) {
+                  // the open trade fully takes the fill?
+                  if (fillQuantity <= t.Quantity) {
+                     // are going to match part or all of this trade
+                     if (fill.Volume < t.Quantity) {
+                        newTrade = createTrade(fill, true, sequence)
+                        newTrade.EntryFillId = fill.FillId
+                        newTrade.Quantity = t.Quantity - fillQuantity
+                        newTrade.EntryFillPrice = fill.Price
+                        newTrade.EntryFillTime = fill.FillDate
+                        newTrade.IsBuy = true
+                     }
+                     newPosition += fillQuantity
+                     val commission = fill.PerUnitFees * fillQuantity;
+                     pnl = ((fill.Price - t.EntryFillPrice) * -fillQuantity * fill.Fx) + commission
+                     t.ExitFillId = fill.FillId
+                     t.ExitFillPrice = fill.Price
+                     t.ExitFillTime = fill.FillDate
+                     t.ClosedProfit = pnl
+                     t.Sequence = sequence
+                     sequence = sequence + 1
+                     newTrades += t
+                     fillQuantity = 0
+                     aMatch = true
+
+                     if (newTrade != null) {
+                        newTrade.Sequence = sequence
+                        sequence = sequence + 1
+                        newTrades += newTrade
+                     }
+                  } else {
+                     val commission = fill.PerUnitFees * t.Quantity;
+                     pnl = ((fill.Price - t.EntryFillPrice) * -t.Quantity * fill.Fx) + commission
+                     t.ExitFillId = fill.FillId
+                     t.ExitFillPrice = fill.Price
+                     t.ExitFillTime = fill.FillDate
+                     t.ClosedProfit = pnl
+                     t.Sequence = sequence
+                     sequence = sequence + 1
+                     newTrades += t
+                     fillQuantity = fillQuantity - t.Quantity
+                     newPosition = newPosition + t.Quantity
+                  }
+               } else if (t.EntryFillId == fill.FillId) {
+                  t.Sequence = sequence
+                  sequence = sequence + 1
+                  newTrades += t
+                  newPosition += t.Quantity
+                  fillQuantity = 0
+                  aMatch = true
+               } else {
+                  t.Sequence = sequence
+                  sequence = sequence + 1
+                  newTrades += t
                }
-               newPosition += fill.Volume
-            } else if( t.EntryFillId == fill.FillId) {
+            } else {
                t.Sequence = sequence
                sequence = sequence + 1
                newTrades += t
-               newPosition += t.Quantity
-               fillQuantity = 0
-               aMatch = true
-               // need to do something about leftoff
+            }
+         })
+         if( !aMatch ) {
+            newTrade = createTrade(fill,true,sequence)
+            newTrades += newTrade
+            newPosition += fill.Volume
+            fillQuantity = 0
+         }
+      }
+
+      trades.clear()
+      // now put all trades back.
+      newTrades.foreach( t =>
+         trades += t
+      )
+      newPosition
+   }
+
+   def processShortFill( fill:Fill, position:Long, trades: mutable.MutableList[Trade] ): Long = {
+      var newPosition = position
+      var fillQuantity = -fill.Volume // want the quantity to be positive
+      var sequence:Long = 0
+      var pnl:Double = 0.0
+      var aMatch:Boolean = false
+      var newTrade: Trade = null
+      val newTrades:mutable.MutableList[Trade] = new mutable.MutableList[Trade]()
+      while( fillQuantity > 0 ) {
+         aMatch = false
+         trades.foreach( t => {
+            if( fillQuantity > 0 ) {
+               // found an exit trade ?
+               if (t.IsBuy && t.ExitFillId == 0) {
+                  // the open trade fully takes the fill
+                  if (fillQuantity <= t.Quantity) {
+                     // are going to match part or all of this trade
+                     if (fillQuantity < t.Quantity) {
+                        newTrade = createTrade(fill, false, sequence)
+                        newTrade.EntryFillId = fill.FillId
+                        newTrade.Quantity = t.Quantity - fillQuantity
+                        newTrade.EntryFillPrice = fill.Price
+                        newTrade.EntryFillTime = fill.FillDate
+                        newTrade.IsBuy = false
+                     }
+                     val commission = fill.PerUnitFees * fillQuantity;
+                     newPosition -= fillQuantity
+                     pnl = (((fill.Price - t.EntryFillPrice) * fillQuantity) * fill.Fx) - commission
+                     t.ExitFillId = fill.FillId
+                     t.Quantity = fillQuantity
+                     t.ExitFillPrice = fill.Price
+                     t.ExitFillTime = fill.FillDate
+                     t.ClosedProfit = pnl
+                     t.Sequence = sequence
+                     sequence = sequence + 1
+                     newTrades += t
+                     fillQuantity = 0
+                     aMatch = true
+
+                     if (newTrade != null) {
+                        newTrade.Sequence = sequence
+                        sequence = sequence + 1
+                        newTrades += newTrade
+                     }
+                  } else {
+                     val commission = fill.PerUnitFees * t.Quantity;
+                     pnl = (((fill.Price - t.EntryFillPrice) * t.Quantity) * fill.Fx) - commission
+                     t.ExitFillId = fill.FillId
+                     t.ExitFillPrice = fill.Price
+                     t.ExitFillTime = fill.FillDate
+                     t.ClosedProfit = pnl
+                     t.Sequence = sequence
+                     sequence = sequence + 1
+                     newTrades += t
+                     fillQuantity = fillQuantity - t.Quantity
+                     newPosition = newPosition - t.Quantity
+                  }
+               } else if (t.EntryFillId == fill.FillId) {
+                  t.Sequence = sequence
+                  sequence = sequence + 1
+                  newTrades += t
+                  newPosition -= t.Quantity
+                  fillQuantity = 0
+                  aMatch = true
+               } else {
+                  t.Sequence = sequence
+                  sequence = sequence + 1
+                  newTrades += t
+               }
             } else {
                t.Sequence = sequence
+               sequence = sequence + 1
                newTrades += t
             }
-
          })
          if( !aMatch ) {
             newTrade = createTrade(fill,false,sequence)
             newTrades += newTrade
             newPosition += fill.Volume
             fillQuantity = 0
-
          }
       }
 
-      //while( leftOff < origTrades.length ) {
-
-      //}
-
+      trades.clear()
       // now put all trades back.
       newTrades.foreach( t =>
-         PersistenceManager.insertTrade(t)
+         trades += t
       )
       newPosition
    }

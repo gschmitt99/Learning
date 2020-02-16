@@ -2,31 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef81d424-465b-4a46-a714-b7a82cc69b6f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Core/DbUpdate.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbAddFill.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbAddTrade.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbAddTransaction.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbDeleteTrade.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbGetAccounts.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbGetFillByTicket.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbGetMaxTransactionDate.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbGetTrades.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbGetTransactions.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbGetTransactionsString.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbSimpleTest.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Oanda/Backstore/PersistenceManager.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Oanda/Controllers/Ledger.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Oanda/Models/TransactionRecord.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FileInfo/Backstore/DbFetchAllFileInfo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileInfo/Backstore/DbFetchAllFileInfo.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FileInfo/Backstore/DbFetchAllHashList.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileInfo/Backstore/DbFetchAllHashList.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FileInfo/Backstore/DbQuery.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/DbQuery.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FileInfo/Backstore/mysql-connector-java-8.0.13.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/mysql-connector-java-8.0.13.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Oanda/AccountAction.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/Oanda/Models/AccountAction.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbAddLastTransaction.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbAddPosition.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbGetAllTradesByAccount.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbGetFill.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbGetLastTransaction.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbGetPosition.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbGetPositions.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbGetPositionsByAccount.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbGetTrade.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbUpdateLastTransaction.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbUpdatePosition.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Oanda/Backstore/DbGetFillByTicket.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbGetFillByTicket.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Oanda/Backstore/DbGetMaxTransactionDate.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbGetMaxTransactionDate.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Oanda/Backstore/DbGetTrades.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbGetTrades.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Oanda/Backstore/DbGetTransactionsString.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/Oanda/Backstore/DbGetTransactionsString.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Oanda/Backstore/PersistenceManager.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/Oanda/Backstore/PersistenceManager.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Oanda/Controllers/Ledger.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/Oanda/Controllers/Ledger.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Oanda/Controllers/LedgerManager.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/Oanda/Controllers/LedgerManager.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Oanda/Driver.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/Oanda/Driver.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Oanda/Driver1.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Oanda/InstrumentHistory.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/Oanda/InstrumentHistory.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Oanda/Ledger.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Oanda/TransactionRecord.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Oanda/Models/AccountAction.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/Oanda/Models/AccountAction.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Oanda/Models/TransactionRecord.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/Oanda/Models/TransactionRecord.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,90 +32,66 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbGetFillByTicket.scala">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="234">
-                    <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-                    <folding>
-                      <element signature="e#25#46#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/Oanda/Models/AccountAction.scala">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="396">
-                    <caret line="94" column="30" lean-forward="true" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1569721058">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="12" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.104" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.26" value="1" />
-          <entry key="project.open.time.32" value="2" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.32" value="3" />
           <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.37" value="1" />
+          <entry key="project.open.time.46" value="1" />
+          <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="19" />
+          <entry key="project.open.time.70" value="1" />
+          <entry key="project.open.time.71" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="12" />
+          <entry key="class" value="15" />
           <entry key="gitignore" value="1" />
           <entry key="groovy" value="1" />
           <entry key="iml" value="2" />
-          <entry key="java" value="14" />
+          <entry key="java" value="29" />
           <entry key="properties" value="1" />
-          <entry key="scala" value="220" />
+          <entry key="scala" value="292" />
           <entry key="txt" value="1" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="12" />
+          <entry key="CLASS" value="15" />
           <entry key="Git file" value="1" />
           <entry key="Groovy" value="1" />
           <entry key="IDEA_MODULE" value="2" />
-          <entry key="JAVA" value="14" />
+          <entry key="JAVA" value="29" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="1" />
-          <entry key="Scala" value="220" />
+          <entry key="Scala" value="292" />
           <entry key="XML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="scala" value="78223" />
+          <entry key="scala" value="92538" />
           <entry key="txt" value="9" />
           <entry key="xml" value="110" />
         </counts>
@@ -126,7 +99,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="9" />
-          <entry key="Scala" value="78223" />
+          <entry key="Scala" value="92538" />
           <entry key="XML" value="110" />
         </counts>
       </usages-collector>
@@ -135,25 +108,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Oanda/Driver.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="69" column="35" lean-forward="true" selection-start-line="69" selection-start-column="35" selection-end-line="69" selection-end-column="35" />
-              <folding>
-                <element signature="e#15#56#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="234">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Oanda/Controllers/Ledger.scala">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Oanda/Controllers/LedgerManager.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="146" column="52" selection-start-line="146" selection-start-column="52" selection-end-line="146" selection-end-column="52" />
+            <state relative-caret-position="252">
+              <caret line="111" column="7" lean-forward="true" selection-start-line="111" selection-start-column="7" selection-end-line="111" selection-end-column="7" />
               <folding>
-                <element signature="e#27#48#0" expanded="true" />
+                <element signature="e#27#52#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -162,89 +132,71 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/PersistenceManager.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="170" column="9" selection-start-line="170" selection-start-column="9" selection-end-line="170" selection-end-column="9" />
+            <state relative-caret-position="126">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
               <folding>
-                <element signature="e#25#118#0" expanded="true" />
+                <element signature="e#25#50#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbAddTrade.scala">
+        <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/lang/ref/Reference.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-              <folding>
-                <element signature="e#25#58#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="144">
+              <caret line="230" column="31" selection-start-line="230" selection-start-column="31" selection-end-line="230" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbGetTrades.scala">
+        <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.7-sources.jar!/scala/collection/immutable/List.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="397">
+              <caret line="387" column="6" selection-start-line="387" selection-start-column="6" selection-end-line="387" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/net/SocketInputStream.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="397">
+              <caret line="92" column="23" selection-start-line="92" selection-start-column="23" selection-end-line="92" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbGetTransactionsString.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="324">
-              <caret line="20" column="40" lean-forward="true" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbDeleteTrade.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="104" selection-start-line="7" selection-start-column="104" selection-end-line="7" selection-end-column="104" />
+              <caret line="18" column="122" selection-start-line="18" selection-start-column="122" selection-end-line="18" selection-end-column="122" />
               <folding>
-                <element signature="e#25#45#0" expanded="true" />
+                <element signature="e#25#50#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Oanda/Models/TransactionRecord.scala">
+        <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbGetLastTransaction.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="44" column="15" selection-start-line="44" selection-start-column="15" selection-end-line="44" selection-end-column="15" />
+            <state relative-caret-position="162">
+              <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
               <folding>
-                <element signature="e#22#43#0" expanded="true" />
+                <element signature="e#25#44#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbAddFill.scala">
+        <entry file="file://$PROJECT_DIR$/src/Oanda/Models/AccountAction.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="30" column="11" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
-              <folding>
-                <element signature="e#25#58#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Core/DbUpdate.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="34" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
-              <folding>
-                <element signature="e#14#51#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/src/Core/mysql-connector-java-8.0.13.jar!/com/mysql/cj/jdbc/StatementImpl.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="1103" selection-start-line="1103" selection-end-line="1103" />
+            <state relative-caret-position="3852">
+              <caret line="214" column="98" selection-start-line="214" selection-start-column="98" selection-end-line="214" selection-end-column="98" />
             </state>
           </provider>
         </entry>
@@ -270,6 +222,16 @@
       <find>AccountAction</find>
       <find />
       <find>deleteTra</find>
+      <find>longfill</find>
+      <find>summaryti</find>
+      <find>Position</find>
+      <find>inverseFx</find>
+      <find>commission</find>
+      <find>dbCheck</find>
+      <find>checkupdate</find>
+      <find>Option</find>
+      <find>TestClass</find>
+      <find>getSimpleTest</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -284,18 +246,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/PatternMatching/monthMatch.scala" />
-        <option value="$PROJECT_DIR$/src/Options/OptionTest1.scala" />
-        <option value="$PROJECT_DIR$/src/FuncionalProgramming/SideEffects.scala" />
-        <option value="$PROJECT_DIR$/src/XmlParsing/rules/FunctionRule.scala" />
-        <option value="$PROJECT_DIR$/src/XmlParsing/rules/RulesParser.scala" />
-        <option value="$PROJECT_DIR$/src/XmlParsing/resources/functions.xml" />
-        <option value="$PROJECT_DIR$/src/FileInfo/TreeBuilder/TreeBuilder.scala" />
-        <option value="$PROJECT_DIR$/src/XmlParsing/input/ValuesHolder.scala" />
-        <option value="$PROJECT_DIR$/src/FileInfo/Program.scala" />
-        <option value="$PROJECT_DIR$/src/FileInfo/TreeBuilderPackage/TreeBuilder.scala" />
-        <option value="$PROJECT_DIR$/src/FileInfo/Models/Tree.scala" />
-        <option value="$PROJECT_DIR$/src/Collections/TestFixture.scala" />
         <option value="$PROJECT_DIR$/src/Collections/CollectionTest.scala" />
         <option value="$PROJECT_DIR$/src/Collections/CollectionTestTest.groovy" />
         <option value="$PROJECT_DIR$/src/Traits/MixinDemo.scala" />
@@ -318,23 +268,35 @@
         <option value="$PROJECT_DIR$/src/Oanda/Models/Ledger.scala" />
         <option value="$PROJECT_DIR$/src/Oanda/InstrumentHistory.scala" />
         <option value="$PROJECT_DIR$/src/Oanda/Driver1.scala" />
-        <option value="$PROJECT_DIR$/src/Oanda/Backstore/DbGetMaxTransactionDate.scala" />
         <option value="$PROJECT_DIR$/src/Oanda/Backstore/DbAddTransaction.scala" />
-        <option value="$PROJECT_DIR$/src/Oanda/Backstore/DbGetTransactionsString.scala" />
-        <option value="$PROJECT_DIR$/src/Oanda/Controllers/LedgerManager.scala" />
-        <option value="$PROJECT_DIR$/src/Oanda/Models/TransactionRecord.scala" />
-        <option value="$PROJECT_DIR$/src/Oanda/Driver.scala" />
         <option value="$PROJECT_DIR$/src/Oanda/Backstore/DbDeleteTradeByAccountAndInstrument.scala" />
         <option value="$PROJECT_DIR$/src/Oanda/Backstore/DbDeleteTradesByAccountAndInstrument.scala" />
-        <option value="$PROJECT_DIR$/src/Oanda/Models/AccountAction.scala" />
-        <option value="$PROJECT_DIR$/src/Oanda/Backstore/DbGetFillByTicket.scala" />
         <option value="$PROJECT_DIR$/src/Oanda/Backstore/DbDeleteTrade.scala" />
         <option value="$PROJECT_DIR$/src/Oanda/Backstore/DbAddFill.scala" />
         <option value="$PROJECT_DIR$/src/Core/DbUpdate.scala" />
-        <option value="$PROJECT_DIR$/src/Oanda/Backstore/DbGetTrades.scala" />
         <option value="$PROJECT_DIR$/src/Oanda/Backstore/DbAddTrade.scala" />
-        <option value="$PROJECT_DIR$/src/Oanda/Backstore/PersistenceManager.scala" />
+        <option value="$PROJECT_DIR$/src/Oanda/Backstore/DbAddPosition.scala" />
+        <option value="$PROJECT_DIR$/src/Oanda/Backstore/DbUpdatePosition.scala" />
+        <option value="$PROJECT_DIR$/src/Oanda/Backstore/DbGetMaxTransactionDate.scala" />
+        <option value="$PROJECT_DIR$/src/Oanda/Backstore/DbGetTrade.scala" />
+        <option value="$PROJECT_DIR$/src/Oanda/Backstore/DbGetAllTradesByAccount.scala" />
+        <option value="$PROJECT_DIR$/src/Oanda/Backstore/DbGetTrades.scala" />
+        <option value="$PROJECT_DIR$/src/Oanda/Backstore/DbGetPosition.scala" />
+        <option value="$PROJECT_DIR$/src/Oanda/Backstore/DbGetPositions.scala" />
+        <option value="$PROJECT_DIR$/src/Oanda/Backstore/DbGetPositionsByAccount.scala" />
+        <option value="$PROJECT_DIR$/src/Oanda/Backstore/DbGetFillByTicket.scala" />
+        <option value="$PROJECT_DIR$/src/Oanda/Backstore/DbGetFill.scala" />
+        <option value="$PROJECT_DIR$/src/Oanda/Models/TestClass.scala" />
+        <option value="$PROJECT_DIR$/src/Oanda/Backstore/DbGetLastTransaction.scala" />
+        <option value="$PROJECT_DIR$/src/Oanda/Backstore/DbAddLastTransaction.scala" />
+        <option value="$PROJECT_DIR$/src/Oanda/Models/AccountAction.scala" />
+        <option value="$PROJECT_DIR$/src/Oanda/Models/TransactionRecord.scala" />
+        <option value="$PROJECT_DIR$/src/Oanda/Backstore/DbUpdateLastTransaction.scala" />
         <option value="$PROJECT_DIR$/src/Oanda/Controllers/Ledger.scala" />
+        <option value="$PROJECT_DIR$/src/Oanda/Controllers/LedgerManager.scala" />
+        <option value="$PROJECT_DIR$/src/Oanda/Backstore/DbGetTransactionsString.scala" />
+        <option value="$PROJECT_DIR$/src/Oanda/Driver.scala" />
+        <option value="$PROJECT_DIR$/src/Oanda/Backstore/PersistenceManager.scala" />
       </list>
     </option>
   </component>
@@ -358,8 +320,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -376,26 +338,7 @@
               <item name="Learning" type="b2602c69:ProjectViewProjectNode" />
               <item name="Learning" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Learning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Learning" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="FileInfo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Learning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Learning" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Oanda" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Learning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Learning" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Oanda" type="462c0819:PsiDirectoryNode" />
-              <item name="Backstore" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Learning" type="b2602c69:ProjectViewProjectNode" />
@@ -431,11 +374,14 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="Debugger_Data_Views_Java" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
       <recent name="Collections" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="groovy.util.GroovyTestCase" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Oanda.Backstore" />
@@ -443,9 +389,6 @@
       <recent name="Oanda" />
       <recent name="PatternMatching" />
       <recent name="FileInfo.Backstore" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="groovy.util.GroovyTestCase" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Work\ProgrammingLanguages\Scala\Learning\src\Core" />
@@ -616,22 +559,22 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1040" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49848023" visible="true" weight="0.24190938" />
-      <window_info id="Structure" order="1" sideWeight="0.50151974" side_tool="true" weight="0.24190938" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.495585" visible="true" weight="0.25485438" />
+      <window_info id="Structure" order="1" sideWeight="0.50441504" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Learn" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289183" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.86" weight="0.5419426" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.43156734" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.46909493" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.49916667" visible="true" weight="0.49448124" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.49916667" visible="true" weight="0.28145695" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32914573" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5025" side_tool="true" weight="0.32914573" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4975" weight="0.23178808" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4975" weight="0.16666667" />
       <window_info anchor="bottom" id="Inspection Results" order="11" visible="true" weight="0.3289183" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -640,22 +583,22 @@
       <window_info anchor="right" id="Maven Projects" order="4" weight="0.32928804" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49848023" weight="0.24190938" />
-      <window_info id="Structure" order="1" sideWeight="0.50151974" side_tool="true" weight="0.24190938" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.495585" visible="true" weight="0.25080907" />
+      <window_info id="Structure" order="1" sideWeight="0.50441504" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Learn" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289183" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.86" weight="0.5419426" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.2737307" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.37417218" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49916667" weight="0.29801324" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49916667" weight="0.3432671" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32914573" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5025" side_tool="true" weight="0.32914573" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4975" weight="0.23178808" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4975" weight="0.16666667" />
       <window_info anchor="bottom" id="Inspection Results" order="11" visible="true" weight="0.3289183" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -754,33 +697,39 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/Oanda/Models/TransactionRecord.scala</url>
-          <line>61</line>
+          <line>65</line>
           <properties />
           <option name="timeStamp" value="137" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/Oanda/Controllers/Ledger.scala</url>
-          <line>61</line>
+          <url>file://$PROJECT_DIR$/src/Oanda/Driver.scala</url>
+          <line>16</line>
           <properties />
-          <option name="timeStamp" value="139" />
+          <option name="timeStamp" value="138" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/Oanda/Controllers/Ledger.scala</url>
-          <line>91</line>
+          <url>file://$PROJECT_DIR$/src/Oanda/Controllers/LedgerManager.scala</url>
+          <line>69</line>
           <properties />
-          <option name="timeStamp" value="153" />
+          <option name="timeStamp" value="196" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/Oanda/Controllers/Ledger.scala</url>
-          <line>95</line>
+          <url>file://$PROJECT_DIR$/src/Oanda/Controllers/LedgerManager.scala</url>
+          <line>105</line>
           <properties />
-          <option name="timeStamp" value="154" />
+          <option name="timeStamp" value="202" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/Oanda/Controllers/Ledger.scala</url>
-          <line>136</line>
+          <url>file://$PROJECT_DIR$/src/Oanda/Controllers/LedgerManager.scala</url>
+          <line>67</line>
           <properties />
-          <option name="timeStamp" value="158" />
+          <option name="timeStamp" value="204" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/Oanda/Controllers/LedgerManager.scala</url>
+          <line>65</line>
+          <properties />
+          <option name="timeStamp" value="205" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -794,6 +743,26 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>fill</expression-string>
+        <language-id>Scala</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>t</expression-string>
+        <language-id>Scala</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>fillQuantity</expression-string>
+        <language-id>Scala</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>t.Quantity</expression-string>
+        <language-id>Scala</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>totalVolume</expression-string>
         <language-id>Scala</language-id>
@@ -844,190 +813,9 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ControlStructures/ForLoopYield.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ControlStructures/HigherOrderFunction.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ControlStructures/Currying.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ControlStructures/NewControlStructures.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CaseClassesAndPatternMatching/ExpressionsBase.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Observables/Program.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Collections/Lists/ListExamples.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="110" column="8" selection-start-line="110" selection-start-column="8" selection-end-line="110" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ArrayDemo1.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.7-sources.jar!/scala/collection/mutable/HashMap.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="144" column="65" selection-start-line="144" selection-start-column="65" selection-end-line="144" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.7-sources.jar!/scala/collection/mutable/HashTable.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="234" column="6" selection-start-line="234" selection-start-column="6" selection-end-line="234" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Core/CoreUtils.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FileInfo/Program.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="13" selection-start-line="12" selection-end-line="13" />
-          <folding>
-            <element signature="e#18#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbSimpleTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.7-sources.jar!/scala/Double.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/notes.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/src/Core/mysql-connector-java-8.0.13.jar!/com/mysql/cj/jdbc/result/ResultSetImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="877" selection-start-line="877" selection-end-line="877" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/lang/StringLatin1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="734" selection-start-line="734" selection-end-line="734" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/lang/AbstractStringBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="756" selection-start-line="756" selection-end-line="756" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/text/SimpleDateFormat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="599" selection-start-line="599" selection-end-line="599" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/lang/StringUTF16.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="1311" selection-start-line="1311" selection-end-line="1311" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.sql/java/sql/ResultSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2196">
-          <caret line="148" column="17" selection-start-line="148" selection-start-column="17" selection-end-line="148" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FileInfo/Backstore/PersistenceManager.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="76" column="45" selection-start-line="76" selection-start-column="45" selection-end-line="76" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FileInfo/Backstore/DbFetchAllHashList.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbGetAccounts.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Oanda/Models/Ledger.scala" />
-    <entry file="file://$PROJECT_DIR$/src/Oanda/InstrumentHistory.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="96" column="4" lean-forward="true" selection-start-line="96" selection-start-column="4" selection-end-line="96" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Oanda/InstrumentHistory.scala" />
     <entry file="file://$PROJECT_DIR$/src/Oanda/TransactionRecord1.scala" />
     <entry file="file://$PROJECT_DIR$/src/Oanda/Driver1.scala" />
-    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbGetMaxTransactionDate.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.7-sources.jar!/scala/Option.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
@@ -1049,169 +837,281 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbAddTransaction.scala">
+    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbAddTransaction.scala" />
+    <entry file="file://$PROJECT_DIR$/src/Core/DbQuery.scala" />
+    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbDeleteTradesByAccountAndInstrument.scala" />
+    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbAddFill.scala" />
+    <entry file="jar://$PROJECT_DIR$/src/Core/mysql-connector-java-8.0.13.jar!/com/mysql/cj/jdbc/StatementImpl.class" />
+    <entry file="file://$PROJECT_DIR$/src/Core/DbUpdate.scala" />
+    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbAddPosition.scala" />
+    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbAddTrade.scala" />
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.sql/java/sql/Timestamp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        <state relative-caret-position="309">
+          <caret line="452" column="15" selection-start-line="452" selection-start-column="15" selection-end-line="452" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Core/DbQuery.scala">
+    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbUpdatePosition.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+        <state relative-caret-position="72">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/text/SimpleDateFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="1540" selection-start-line="1540" selection-end-line="1540" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/util/GregorianCalendar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="2591" selection-start-line="2591" selection-end-line="2591" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/text/DecimalFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="2074" selection-start-line="2074" selection-end-line="2074" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbGetTrade.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbGetTrades.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbGetTransactions.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="9" selection-start-line="9" selection-end-line="12" selection-end-column="4" />
+        <state relative-caret-position="594">
+          <caret line="35" column="43" lean-forward="true" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.7-sources.jar!/scala/collection/immutable/List.scala">
+    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbGetFillByTicket.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="387" column="6" selection-start-line="387" selection-start-column="6" selection-end-line="387" selection-end-column="6" />
+        <state relative-caret-position="126">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbGetFill.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="30" column="43" lean-forward="true" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbGetAllTradesByAccount.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbDeleteTrade.scala">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbGetPositionsByAccount.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbGetMaxTransactionDate.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbGetPositions.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbGetPosition.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="3257" selection-start-line="3257" selection-end-line="3257" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="497" selection-start-line="497" selection-end-line="497" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/text/DateFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="392" selection-start-line="392" selection-end-line="392" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbAddLastTransaction.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Oanda/Models/TestClass.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Oanda/Models/TransactionRecord.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbUpdateLastTransaction.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="59" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/net/PlainSocketImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="327" column="22" selection-start-line="327" selection-start-column="22" selection-end-line="327" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/Core/mysql-connector-java-8.0.13.jar!/com/mysql/cj/protocol/a/SimplePacketReader.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/Core/mysql-connector-java-8.0.13.jar!/com/mysql/cj/protocol/a/NativeProtocol.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="503" selection-start-line="503" selection-end-line="503" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/Core/mysql-connector-java-8.0.13.jar!/com/mysql/cj/jdbc/ConnectionImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="257" selection-start-line="257" selection-end-line="257" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Oanda/Models/AccountAction.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3852">
+          <caret line="214" column="98" selection-start-line="214" selection-start-column="98" selection-end-line="214" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Oanda/Controllers/Ledger.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3415">
+          <caret line="67" column="66" selection-start-line="67" selection-start-column="66" selection-end-line="67" selection-end-column="66" />
+          <folding>
+            <element signature="e#27#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbGetLastTransaction.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <folding>
+            <element signature="e#25#44#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbGetTransactionsString.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="56" column="7" selection-start-line="56" selection-start-column="7" selection-end-line="56" selection-end-column="7" />
+        <state relative-caret-position="324">
+          <caret line="18" column="122" selection-start-line="18" selection-start-column="122" selection-end-line="18" selection-end-column="122" />
           <folding>
-            <element signature="e#25#46#0" expanded="true" />
+            <element signature="e#25#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbDeleteTradesByAccountAndInstrument.scala">
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/lang/ref/Reference.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="230" column="31" selection-start-line="230" selection-start-column="31" selection-end-line="230" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.7-sources.jar!/scala/collection/immutable/List.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="387" column="6" selection-start-line="387" selection-start-column="6" selection-end-line="387" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/net/SocketInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="92" column="23" selection-start-line="92" selection-start-column="23" selection-end-line="92" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/PersistenceManager.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="7" column="67" selection-start-line="7" selection-start-column="67" selection-end-line="7" selection-end-column="67" />
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
           <folding>
-            <element signature="e#25#45#0" expanded="true" />
+            <element signature="e#25#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Oanda/Controllers/LedgerManager.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Oanda/Models/TransactionRecord.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="44" column="15" selection-start-line="44" selection-start-column="15" selection-end-line="44" selection-end-column="15" />
+        <state relative-caret-position="252">
+          <caret line="111" column="7" lean-forward="true" selection-start-line="111" selection-start-column="7" selection-end-line="111" selection-end-column="7" />
           <folding>
-            <element signature="e#22#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbGetFillByTicket.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-          <folding>
-            <element signature="e#25#46#0" expanded="true" />
+            <element signature="e#27#52#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Oanda/Driver.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="69" column="35" lean-forward="true" selection-start-line="69" selection-start-column="35" selection-end-line="69" selection-end-column="35" />
-          <folding>
-            <element signature="e#15#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Oanda/Models/AccountAction.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="94" column="30" lean-forward="true" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbDeleteTrade.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="104" selection-start-line="7" selection-start-column="104" selection-end-line="7" selection-end-column="104" />
-          <folding>
-            <element signature="e#25#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbAddFill.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="30" column="11" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
-          <folding>
-            <element signature="e#25#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/src/Core/mysql-connector-java-8.0.13.jar!/com/mysql/cj/jdbc/StatementImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="1103" selection-start-line="1103" selection-end-line="1103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbGetTrades.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="20" column="40" lean-forward="true" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Core/DbUpdate.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="34" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
-          <folding>
-            <element signature="e#14#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/PersistenceManager.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="170" column="9" selection-start-line="170" selection-start-column="9" selection-end-line="170" selection-end-column="9" />
-          <folding>
-            <element signature="e#25#118#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Oanda/Backstore/DbAddTrade.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-          <folding>
-            <element signature="e#25#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Oanda/Controllers/Ledger.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="146" column="52" selection-start-line="146" selection-start-column="52" selection-end-line="146" selection-end-column="52" />
-          <folding>
-            <element signature="e#27#48#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="234">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
